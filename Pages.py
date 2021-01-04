@@ -173,6 +173,10 @@ class TrigPage(tk.Frame):
         title_label = tk.Label(self, text = "TRIG SOLVER", font=("Times New Roman", 24), bg = '#FFFFFF')
         title_label.place(relx = .5, rely = .05, anchor = tk.N)
 
+        # Button for the user to return to the main menu page
+        mainMenuButton = tk.Button(self, text = 'Main Menu', width = 9, height = 1, command = lambda: master.switch_frame(StartPage))
+        mainMenuButton.place(relx = .9, rely = .07, anchor = tk.N)
+
 class ExponentialPage(tk.Frame):
     def __init__(self, master):
         tk.Frame.__init__(self, master)
@@ -180,6 +184,10 @@ class ExponentialPage(tk.Frame):
 
         title_label = tk.Label(self, text = "EXPONENTIAL SOLVER", font=("Times New Roman", 24), bg = '#FFFFFF')
         title_label.place(relx = .5, rely = .05, anchor = tk.N)
+
+        # Button for the user to return to the main menu page
+        mainMenuButton = tk.Button(self, text = 'Main Menu', width = 9, height = 1, command = lambda: master.switch_frame(StartPage))
+        mainMenuButton.place(relx = .9, rely = .07, anchor = tk.N)
 
 class LogarithmPage(tk.Frame):
     def __init__(self, master):
@@ -189,8 +197,10 @@ class LogarithmPage(tk.Frame):
         title_label = tk.Label(self, text = "LOGARITHM SOLVER", font=("Times New Roman", 24), bg = '#FFFFFF')
         title_label.place(relx = .5, rely = .05, anchor = tk.N)
 
-listOfCoefficients = [1,2,3,4]
-print(MathFunctions.evaluate_polynomial(listOfCoefficients, 4))
+        # Button for the user to return to the main menu page
+        mainMenuButton = tk.Button(self, text = 'Main Menu', width = 9, height = 1, command = lambda: master.switch_frame(StartPage))
+        mainMenuButton.place(relx = .9, rely = .07, anchor = tk.N)
+
 
 # Runs the application
 app = Application()
