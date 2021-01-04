@@ -1,6 +1,6 @@
 import tkinter as tk
 import MathFunctions
-
+from PIL import Image, ImageTk
 
 class Application(tk.Tk):
     def __init__(self):
@@ -28,6 +28,7 @@ class Application(tk.Tk):
 # going to want to perform calculations on. 
 class StartPage(tk.Frame):
     def __init__(self, master):
+
         tk.Frame.__init__(self, master)
         self.configure(bg = '#FFFFFF')
 
@@ -55,10 +56,10 @@ class PolynomialPage(tk.Frame):
         listOfCoefficients = []
 
         instructions = tk.Label(self, text = "Please enter the coefficients of the polynomial: (You can leave it blank for zero)", font = ("Times New Roman", 12), bg = "#FFFFFF")
-        degreeOfPolynomial_label = tk.Label(self, text = 'Degree of polynomial (min:0, max:7)', bg = '#FFFFFF')
-        degreeOfPolynomial_label.place(relx = .3, rely = .2, anchor = tk.N)
+        degreeOfPolynomial_label = tk.Label(self, text = 'Degree of polynomial (min:0, max:7)', bg = '#FFFFFF', font = ("Times New Roman", 12))
+        degreeOfPolynomial_label.place(relx = .45, rely = .2, anchor = tk.N)
         degreeOfPolynomial = tk.Entry(self, width = 5, relief = tk.GROOVE)
-        degreeOfPolynomial.place(relx = .5, rely = .2, anchor = tk.N)
+        degreeOfPolynomial.place(relx = .65, rely = .2, anchor = tk.N)
 
         submitButton = tk.Button(self, text = 'Submit', width = 7, height = 1, command = lambda: submit_degree())
         submitButton.place(relx = .5, rely = .3, anchor = tk.N)
@@ -153,11 +154,15 @@ class PolynomialPage(tk.Frame):
             labelForFunction.place(relx = .5, rely = .4, anchor = tk.N)
 
             # We now display the functions for calculating the deriviatve, integral, and root of the function
-            button_for_derivative = tk.Button(self, text = "Symbolic derivative")
-            button_for_integral = tk.Button(self, text = "Symbolic integral")
-            
+            button_for_derivative = tk.Button(self, text = "Symbolic derivative", font = ("Times New Roman", 11), width = 17, height = 2)
+            button_for_integral = tk.Button(self, text = "Symbolic integral", font = ("Times New Roman", 11), width = 17, height = 2)
+            button_for_numerical_derivative = tk.Button(self, text = "Numerical derivative", font = ("Times New Roman", 11), width = 17, height = 2)
+            button_for_numerical_integral = tk.Button(self, text = "Numerical integration", font = ("Times New Roman", 11), width = 17, height = 2)
 
-
+            button_for_derivative.place(relx = .3, rely = .7, anchor = tk.N)
+            button_for_integral.place(relx = .6, rely = .7, anchor = tk.N)
+            button_for_numerical_derivative.place(relx = .3, rely = .8, anchor = tk.N)
+            button_for_numerical_integral.place(relx = .6, rely = .8, anchor = tk.N)
 
 
 class TrigPage(tk.Frame):

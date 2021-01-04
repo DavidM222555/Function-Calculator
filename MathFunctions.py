@@ -21,6 +21,6 @@ def plot_function(list_of_coefficients, step_size):
 
     plt.plot(list_of_x_values, list_of_y_values)
 
-    plt.show()
+    plt.savefig("Figure.png")
 
-plot_function([1,0,0], 1)
+    return("Figure.jpg")
